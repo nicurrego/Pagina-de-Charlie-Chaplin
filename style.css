@@ -1,0 +1,446 @@
+html {
+    cursor: url('imagenes/cursor.png'), auto;
+}
+a{
+  cursor: url('imagenes/cursor.png'), all-scroll;
+}
+.container{
+  background-color: #dfd7d7;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto 400px auto 200px;
+  min-height: 100vh;
+  grid-template-areas: 
+    ". header ."
+    "aside aside aside"
+    ". main ."
+    "footer footer footer";
+gap: 2px ;
+}
+@media (max-width: 600px) {
+  .container {
+    grid-template-areas: 
+      "header header header"
+      "aside aside aside"
+      "main main main"
+      "footer footer footer";
+  }
+  .footer-content {
+    flex-direction: column;
+  }
+}
+.container header{
+  grid-area: header;
+}
+.container aside{
+  background-color: rgb(66, 66, 58);
+  grid-area: aside;
+}
+.container main{
+  grid-area: main;
+}
+.container footer{
+  background-color: gray;
+  grid-area: footer;
+}
+body{
+  margin: 0;
+}
+header {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+}
+.header1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: .5s ease;
+  margin-right: 10px;
+}
+.header1:hover{
+  scale: 1.03;
+}
+.header1 img {
+  width: 40px;
+  height: 80px;
+}
+.header2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: url('imagenes/header1.png');
+  background-size: cover;
+  background-position: center;
+  width: 500px;
+  height: 100px;
+  color: #000;
+  text-align: center;
+  padding-top: 5px;
+  
+}
+.header1 a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 22px;
+    transition: .5s ease;
+}
+.header2 a {
+    color: #ffffff; /* Color del texto: blanco */
+    padding-bottom: 13px;
+    text-shadow: 
+        -1px -1px 0 #000,   /* Sombra negra hacia arriba a la izquierda */
+        1px -1px 0 #000,    /* Sombra negra hacia arriba a la derecha */
+        -1px 1px 0 #000,    /* Sombra negra hacia abajo a la izquierda */
+        1px 1px 0 #000;     /* Sombra negra hacia abajo a la derecha */
+    text-decoration: none;
+    font-size: 1.6em;
+    margin: 0 10px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.header2 a:hover {
+    color: #b89457;
+    text-shadow: 2px 2px 5px #000000;
+    text-decoration: none;
+}
+/* Estilos para el footer */
+.site-footer {
+  background-color: rgb(66, 66, 58);
+  color: #f5f5f5; /* Texto en un tono claro para contraste */
+  text-align: center;
+  padding: 20px 0;
+  border-top: 3px solid #b89457; /* Línea superior para separar visualmente */
+  font-family: 'Playfair Display', serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #f5f5f5;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #b89457;
+}
+
+.footer-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.footer-info p:last-child {
+  font-style: italic;
+  color: #200303; /* Cita resaltada */
+}
+
+aside{
+  display: grid;
+  align-content: center;
+  justify-content: center;
+
+}
+.photo-carousel{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 300px;
+}
+.slider{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+.slider img{
+  height: 280px;
+  display: none;
+}
+img.displaySlide{
+  display: block;
+}
+.prev, .next{
+  margin: 0px -1px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background-color: transparent;
+  background-color: hsla(0, 0, 0, 0.5);
+  color: #b89457;
+  border: none;
+  cursor: pointer;
+}
+.prev{
+  left: 0;
+}
+.next{
+  right: 0;
+}
+.introduccion {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Inicio de CSS para Legacy.html */
+/* Variables para ajustar parámetros fácilmente */
+aside h2{
+  justify-self: center;
+  color: var(--color-2); 
+  font-size: 30px; 
+  margin-bottom: 30px;
+  padding-top: 0px;
+}
+:root {
+  --color-1: rgb(67, 20, 20); /* Fondo del frente */
+  --color-2: rgb(226, 210, 210); /* Texto del frente */
+  --border-color: #b89457; /* Color del borde */
+  --ancho-tarjeta: 40vw;
+  --alto-tarjeta: 100px;
+  --duracion-transicion: 0.4s;
+}
+.tarjetas {
+  margin-top: 15px;
+  display: flex;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(var(--ancho-tarjeta), 1fr));
+  justify-items: center;
+  height: auto;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarjeta {
+  width: var(--ancho-tarjeta);
+  height: var(--alto-tarjeta);
+  perspective: 1000px;
+  position: relative;
+}
+
+.tarjeta::before, .tarjeta::after {
+  content: attr(data-frente);
+  position: absolute;
+  padding: 10px;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+  border: 2px solid var(--border-color);
+  transition: transform var(--duracion-transicion) ease-in-out;
+  backface-visibility: hidden;
+}
+
+/* Frente de la tarjeta */
+.tarjeta::before {
+  background-color: var(--color-1); /* Fondo del frente */
+  color: var(--color-2); /* Texto del frente */
+  font-size: 1.2rem;
+}
+
+/* Reverso de la tarjeta */
+.tarjeta::after {
+  content: attr(data-reverso);
+  background-color: var(--color-2); /* Fondo del reverso */
+  color: var(--color-1); /* Texto del reverso */
+  font-weight: bolder;
+  transform: rotateY(180deg);
+  scale: 1.1;
+}
+
+/* Animación de rotación */
+.tarjeta:hover::before {
+  transform: rotateY(180deg);
+}
+
+.tarjeta:hover::after {
+  transform: rotateY(360deg);
+}
+/* Estilos para el main de la biografía */
+.biografia {
+  font-family: 'Playfair Display', serif; /* Fuente elegante para el contenido */
+  color: #333; /* Texto en color oscuro para buena legibilidad */
+  line-height: 1.6; /* Espaciado cómodo entre líneas */
+  padding: 20px; /* Espacio interno alrededor del contenido */
+  background-color: #f5f5f5; /* Color de fondo suave */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para levantar visualmente el contenedor */
+}
+
+.biografia h1 {
+  font-size: 2.5rem; /* Tamaño de fuente más grande para el título principal */
+  color: #2c3e50; /* Color oscuro pero suave para el título */
+  text-align: center;
+  margin-bottom: 20px; /* Separación del título respecto al contenido */
+}
+
+.biografia h2 {
+  font-size: 1.8rem; /* Tamaño de subtítulos */
+  color: #34495e; /* Color diferente para diferenciar los subtítulos */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #b89457; /* Subrayado sutil debajo del subtítulo */
+  padding-bottom: 5px;
+}
+
+.biografia p {
+  font-size: 1.2rem; /* Tamaño de texto cómodo para la lectura */
+  margin-bottom: 20px; /* Espacio entre párrafos */
+  text-align: justify; /* Justificación para una apariencia más profesional */
+}
+
+.biografia em {
+  color: #b22222; /* Citas o títulos resaltados en rojo profundo */
+  font-style: italic;
+}
+
+.biografia blockquote {
+  font-size: 1.3rem;
+  color: #7f8c8d;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 4px solid #b89457; /* Borde dorado claro en las citas */
+}
+
+.biografia img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil en las imágenes */
+}
+
+.biografia p:last-of-type {
+  margin-bottom: 0;
+}
+/* Estilos para la línea temporal */
+.timeline {
+  padding: 20px;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: white;
+  border-left: 4px solid #b89457;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.timeline-item p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .timeline {
+      width: 95%;
+  }
+}
+/* Estilos para la introducción */
+.intro {
+  justify-self: center;
+  align-self: center;
+  height: 90%;
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #7ba9d8;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  color: #d6c8c8;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.collage{
+  display: flex;
+  width: 600px;
+  height: 430px;
+}
+.collage img{
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .8;
+  transition: .5s ease;
+}
+.collage img:hover{
+  width: 300px;
+  opacity: 1;
+}
+.container main{
+  justify-self: center;
+}
+.language-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.2rem;
+}
+
+.language-switcher input {
+  cursor: url('imagenes/cursor.png'), auto;
+  accent-color: #b89457;
+  margin-left: 5px;
+  transform: scale(1.2);
+}
+.language-switcher:hover{
+  cursor: url('imagenes/cursor.png'), auto;
+  transform: scale(1.2);
+}

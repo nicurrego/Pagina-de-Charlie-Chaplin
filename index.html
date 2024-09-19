@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlie Chaplin</title>
+    <link rel="icon" type="image/png" href="imagenes/cursor.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="container">
+        <header>
+            <div class="header1">
+                <a href="index.html">
+                    <img src="imagenes/header.png" alt="Encabezado de Charlie Chaplin">
+                </a>
+                <a href="index.html">
+                    <h1 class="header-title">Charlie Chaplin</h1>
+                </a>
+            </div>
+            <div class="header2">
+                <a href="legacy.html">Legacy</a>
+                <a href="peliculas.html">Movies</a>
+                <a href="collage.html">Collage</a>
+            </div>
+            <!-- Checkbox para cambiar idioma -->
+            <label class="language-switcher">
+                <input type="checkbox" id="language-switcher"> 日本語
+            </label>
+        </header>
+        <aside>
+            <div class="photo-carousel">
+                <div class="slider">
+                    <button class="prev" onclick="prevSlide()">&#10094;</button>
+                    <div class="slides">
+                        <img class="slide displaySlide" src="imagenes/charlie1.jpg" alt="Charlie Chaplin en escena">
+                        <img class="slide" src="imagenes/charlie2.jpg" alt="Charlie Chaplin actuando">
+                        <img class="slide" src="imagenes/charlie3.jpg" alt="Charlie Chaplin con sombrero">
+                        <img class="slide" src="imagenes/charlie4.jpg" alt="Charlie Chaplin en blanco y negro">
+                    </div>
+                    <button class="next" onclick="nextSlide()">&#10095;</button>
+                </div>
+            </div>
+        </aside>
+        <main>
+            <section class="introduccion">
+                <h2>Bienvenidos a la Tributo de Charlie Chaplin</h2>
+                <p>Esta página está dedicada a celebrar la vida y el legado de uno de los actores y cineastas más influyentes de la historia: Charlie Chaplin.</p>
+            </section>
+            <section class="why">
+                <h3>¿Por qué Charlie Chaplin?</h3>
+                <p>Charlie Chaplin revolucionó el cine con su personaje icónico, "Charlot", y su habilidad para combinar comedia y drama de una manera única. Su trabajo no solo entretuvo a millones, sino que también ofreció profundas reflexiones sobre la sociedad y la condición humana.</p>
+            </section>
+            <section class="features">
+                <h3>Características del Sitio</h3>
+                <ul>
+                    <li>Biografía Completa: Conoce los detalles de la vida de Chaplin, desde sus humildes comienzos hasta su estatus como leyenda del cine.</li>
+                    <li>Frases Icónicas: Explora las palabras más memorables de Chaplin que han inspirado a generaciones.</li>
+                    <li>Películas Destacadas: Descubre sus obras maestras y cómo impactaron el mundo del cine.</li>
+                    <li>Galería de Imágenes: Disfruta de una colección de fotos que capturan momentos clave de su carrera.</li>
+                </ul>
+            </section>
+            <section class="agradecimiento">
+                <h3>¡Gracias por tu visita!</h3>
+                <p>¡Gracias por visitar esta página y rendir homenaje a Charlie Chaplin! Tu interés en su legado ayuda a mantener viva la memoria de su extraordinaria contribución al arte y al entretenimiento.</p>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html">Inicio</a>
+                    <a href="legacy.html">Legacy</a>
+                    <a href="peliculas.html">Movies</a>
+                    <a href="collage.html">Collage</a>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2024 Charlie Chaplin Tribute. Todos los derechos reservados.</p>
+                    <p>"La vida es una obra de teatro que no permite ensayos."</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
